@@ -1,0 +1,11 @@
+.addNewForm {
+    background-color: dodgerblue;
+    composes: btn from "./index.css";
+    width: 70px;
+    font-size: 14px;
+
+}
+
+.newTaskForm input{
+width: 200px;
+}

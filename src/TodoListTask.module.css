@@ -1,0 +1,13 @@
+
+.deleteTasks{
+
+    background-color: white;
+    color: black;
+    composes: btn from "./index.css";
+
+
+}
+
+.containerCssClass{
+
+}

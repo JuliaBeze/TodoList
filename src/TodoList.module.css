@@ -1,0 +1,21 @@
+.todoList {
+    border: 2px solid white;
+    font-family: "Times New Roman";
+    text-align: center;
+    font-size: 20px;
+    margin-left: 10px;
+    composes: btn from "./index.css";
+    background-image: url("https://image.freepik.com/free-photo/_23-2147907180.jpg");
+            /*rgba(104, 173, 175, 1);*/
+    color: black;
+    width: 300px;
+    margin-top: -90px;
+    height: 55vh;
+
+}
+
+
+.deleteTodoList {
+    background-color: white;
+
+}

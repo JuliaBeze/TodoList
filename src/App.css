@@ -1,0 +1,53 @@
+.App {
+  display: flex;
+  justify-content: center;
+background-color: white;
+        /*rgba(26,33,57,1);*/
+  height: 50vh;
+}
+
+.todoList {
+
+
+}
+
+.todoList > div {
+  padding: 10px;
+}
+
+.todoList-task {
+
+}
+
+.todoList-task.done {
+  opacity: 0.5;
+}
+
+.filter-active {
+  background-color: blue;
+}
+
+.error {
+  border-color: red;
+}
+
+.header {
+  font-family: "Times New Roman";
+  color: black;
+  font-size: 45px;
+  margin-top: -5px;
+
+}
+.description{
+  font-size: 13px;
+  color: black;
+
+}
+.page{
+  height: 50vh;
+  /*-moz-background-size: 100%; !* Firefox 3.6+ *!*/
+  /*-webkit-background-size: 100%; !* Safari 3.1+ и Chrome 4.0+ *!*/
+  /*-o-background-size: 100%; !* Opera 9.6+ *!*/
+  /*background-size: 100%;*/
+  background-image: url("https://img.tsn.ua/cached/1556003185/tsn-3d89b48abea265f94b95dc0c555f69d9/thumbs/1340x530/60/be/ebdbaaf3dd44725903d7ef991c0abe60.jpeg") ;
+}
