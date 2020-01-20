@@ -1,12 +1,10 @@
-.todoListFooter button {
-    background-color: white;
 
-    font-family: "Times New Roman";
-    font-size: 18px;
-
+.todoListFooter {
 
 }
-.todoListFooter {
-    margin-top: 40px;
+.todoListFooter button{
+    background-color: white;
+    font-family: "Times New Roman";
+    font-size: 17px;
 
 }

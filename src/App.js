@@ -1,11 +1,9 @@
-
 import React from 'react';
 import './App.css';
 import TodoList from "./TodoList";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
-import {ADD_TODOLIST, AddTodoListAC, AddTodolistAC, addTodoListTC, setTodoListAC, setTodoListTC} from "./reducer";
-import {api} from "./api";
+import {addTodoListTC, setTodoListTC} from "./reducer";
 class App extends React.Component {
 
 
@@ -22,7 +20,6 @@ class App extends React.Component {
     }
 
     restoreState = () => {
-        debugger
         this.props.setTodoList()
     };
 
@@ -30,9 +27,8 @@ class App extends React.Component {
         const toDoLists = this.props.toDoLists.map(tl => <TodoList key={tl.id} id={tl.id} title={tl.title}
                                                                    tasks={tl.tasks}/>)
         return (
-            <>
-                <div className="page">
-                    <h1 className="header">TodoList</h1>
+            <div className="page">
+                <div className="main">
                     <div className="description">
                         <h1>Welcome to my todoList applications</h1>
                         <AddNewItemForm
@@ -42,7 +38,7 @@ class App extends React.Component {
                 <div className="App">
                     {toDoLists}
                 </div>
-            </>
+            </div>
         );
     }
 }

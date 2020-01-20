@@ -52,7 +52,7 @@ class TodoListTask extends React.Component {
                     }, priority: {this.props.task.priority}
                     <button className={s.deleteTasks} onClick={this.onDeleteTask}>X</button>
                 </div>
-                </div>
+            </div>
         );
     }
 }

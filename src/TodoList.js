@@ -6,16 +6,12 @@ import TodoListTitle from "./TodoListTitle";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
 import {
-    AddTaskAC, addTaskTC,
-    changeTaskAC, changeTaskTC,
-    DeleteTaskAC, deleteTaskTC,
-    DeleteTodoListAC, deleteToDoListTC, getTasksTC,
-    SetTasksAC, setTasksTC, updateTitleTodoListTC,
-    updateTodoListAC
+    addTaskTC, changeTaskTC, deleteTaskTC,
+    deleteToDoListTC, setTasksTC, updateTitleTodoListTC,
+
 } from "./reducer";
 import s from './TodoList.module.css'
 
-import {api} from "./api";
 class TodoList extends React.Component {
 
     constructor(props) {
@@ -30,9 +26,9 @@ class TodoList extends React.Component {
 
 
 
-   restoreState = () => {
+    restoreState = () => {
         this.props.setTasks(this.props.id)
-   };
+    };
 
     state = {
         tasks: [],
@@ -80,35 +76,37 @@ class TodoList extends React.Component {
 
             <div className={s.todoList}>
 
-                    <TodoListTitle updateTodoTitle = {this.updateTodoTitle}
-                                   title={this.props.title}
-                                   id={this.props.id}/>
-                                   <button className={s.deleteTodoList} onClick={this.deleteToDoList}>X</button>
-                    <AddNewItemForm
-                                    addItem={this.addTask}/>
+                <TodoListTitle updateTodoTitle = {this.updateTodoTitle}
+                               title={this.props.title}
+                               id={this.props.id}/>
+                <button className={s.deleteTodoList} onClick={this.deleteToDoList}>X</button>
+                <AddNewItemForm
+                    addItem={this.addTask}/>
 
 
                 <TodoListTasks
                     deleteTask={this.deleteTask}
-                               toDoListId={this.props.toDoListId}
-                               changeStatus={this.changeStatus}
-                               changeTitle={this.changeTitle}
-                               tasks={tasks.filter(t => {
-                                   if (this.state.filterValue === "All") {
-                                       return true;
-                                   }
-                                   if (this.state.filterValue === "Active") {
-                                       return t.isDone === false;
-                                   }
-                                   if (this.state.filterValue === "Completed") {
-                                       return t.isDone === true;
-                                   }
-                               })}/>
-
-                <TodoListFooter changeFilter={this.changeFilter} filterValue={this.state.filterValue} />
-
-
+                    toDoListId={this.props.toDoListId}
+                    changeStatus={this.changeStatus}
+                    changeTitle={this.changeTitle}
+                    tasks={tasks.filter(t => {
+                        if (this.state.filterValue === "All") {
+                            return true;
+                        }
+                        if (this.state.filterValue === "Active") {
+                            return t.isDone === false;
+                        }
+                        if (this.state.filterValue === "Completed") {
+                            return t.isDone === true;
+                        }
+                    })}/>
+                <div className="footer">
+                    <TodoListFooter changeFilter={this.changeFilter} filterValue={this.state.filterValue}/>
                 </div>
+
+
+
+            </div>
 
         );
     }
@@ -139,6 +137,6 @@ const mapDispatchToProps = (dispatch)=> {
     }
 }
 
- const ConnectedTodoList = connect(null,mapDispatchToProps)(TodoList)
+const ConnectedTodoList = connect(null,mapDispatchToProps)(TodoList)
 export default ConnectedTodoList;
 

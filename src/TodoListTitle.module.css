@@ -1,4 +1,15 @@
 .todoTitle {
  text-decoration: underline;
+ background: #0066cc;
+ padding: 10px;
+ font-size: 14px;
+ color: #fff;
+ font-family: Arial;
+ font-weight: bold;
+ -moz-border-radius: 10px 10px 0 0;
+ -webkit-border-radius: 10px 10px 0 0;
+ border-radius: 10px 10px 0 0;
+ text-shadow: -1px -1px 1px #666;
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#499bea), color-stop(100%,#207ce5));
 
 }

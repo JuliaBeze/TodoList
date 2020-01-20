@@ -1,22 +1,9 @@
 .App {
+  padding-top: 150px;
   display: flex;
-  justify-content: center;
-background-color: white;
-        /*rgba(26,33,57,1);*/
+  justify-content: space-between;
+  flex-wrap: wrap;
   height: 50vh;
-}
-
-.todoList {
-
-
-}
-
-.todoList > div {
-  padding: 10px;
-}
-
-.todoList-task {
-
 }
 
 .todoList-task.done {
@@ -24,30 +11,27 @@ background-color: white;
 }
 
 .filter-active {
-  background-color: blue;
+  background-color: #0066cc;
 }
 
 .error {
   border-color: red;
 }
 
-.header {
-  font-family: "Times New Roman";
-  color: black;
-  font-size: 45px;
-  margin-top: -5px;
-
-}
 .description{
+  padding-top: 40px;
   font-size: 13px;
   color: black;
+  font-family: "Rubik",sans-serif;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-weight: 300;
+  color: white;
+
 
 }
 .page{
-  height: 50vh;
-  /*-moz-background-size: 100%; !* Firefox 3.6+ *!*/
-  /*-webkit-background-size: 100%; !* Safari 3.1+ и Chrome 4.0+ *!*/
-  /*-o-background-size: 100%; !* Opera 9.6+ *!*/
-  /*background-size: 100%;*/
-  background-image: url("https://img.tsn.ua/cached/1556003185/tsn-3d89b48abea265f94b95dc0c555f69d9/thumbs/1340x530/60/be/ebdbaaf3dd44725903d7ef991c0abe60.jpeg") ;
+  background: linear-gradient(to right, #fefcaa,royalblue);
+  padding: 10px;
 }

@@ -20,7 +20,7 @@ class AddNewItemForm extends React.Component {
             this.setState({error: false});
             this.props.addItem(newText);
         }
-    }
+    };
 
     onTitleChanged = (e) => {
         this.setState({
@@ -28,7 +28,7 @@ class AddNewItemForm extends React.Component {
             title: e.currentTarget.value,
 
         });
-    }
+    };
 
     onKeyPress = (e) => {
         if (e.key === "Enter") {
