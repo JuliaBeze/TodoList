@@ -6,17 +6,8 @@
 
 }
 
-.todoList-task.done {
-  opacity: 0.5;
-}
 
-.filter-active {
-  background-color: #0066cc;
-}
 
-.error {
-  border-color: red;
-}
 
 .description{
   padding-top: 40px;
@@ -47,4 +38,13 @@
 
 .todoList > div {
   padding: 10px;
+}
+
+
+.filter-active {
+  background-color: #0066cc;
+}
+
+.error {
+  border-color: red;
 }

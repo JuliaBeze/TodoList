@@ -5,6 +5,18 @@ import s from './TodoListTask.module.css'
 class TodoListTask extends React.Component {
 
 
+
+
+
+
+
+
+
+    state = {
+        editMode: false,
+        title: this.props.task.title
+    };
+
     onIsDoneChanged = (e) => {
         this.props.changeStatus(this.props.task.id, e.currentTarget.checked);
     };
@@ -14,18 +26,14 @@ class TodoListTask extends React.Component {
         // this.props.changeTitle(this.props.task.id, e.currentTarget.value);
     };
 
-    state = {
-        editMode: false,
-        title: this.props.task.title
-    };
-
     activateEditMode = () => {
         this.setState({editMode: true});
     }
 
     deactivateEditMode= () => {
-        this.props.changeTitle(this.props.task.id, this.state.title);
         this.setState({editMode: false});
+        this.props.changeTitle(this.props.task.id, this.state.title);
+
     }
 
     onDeleteTask=()=> {
@@ -43,18 +51,14 @@ class TodoListTask extends React.Component {
                     <input type="checkbox"
                            checked={this.props.task.isDone}
                            onChange={this.onIsDoneChanged}/>
-
-
-                        { this.state.editMode
+                    {this.state.editMode
                         ? <input onBlur={this.deactivateEditMode}
                                  onChange={this.onTitleChanged}
                                  autoFocus={true}
-                                 value={this.state.title} />
-
-
-                            : <span onClick={this.activateEditMode}> {this.state.title}</span>
-                        }, priority: {this.props.task.priority}
-                        <button className={s.deleteTasks} onClick={this.onDeleteTask}>X</button>
+                                 value={this.state.title}/>
+                        : <span onClick={this.activateEditMode}> {this.state.title}</span>
+                    }, priority: {this.props.task.priority}
+                    <button className={s.deleteTasks} onClick={this.onDeleteTask}>X</button>
 
 
 
@@ -64,6 +68,7 @@ class TodoListTask extends React.Component {
         );
     }
 }
+
 
 export default TodoListTask;
 

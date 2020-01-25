@@ -30,7 +30,7 @@ class App extends React.Component {
             <div className="page">
                 <div className="main">
                     <div className="description">
-                        <h1>Welcome to my todoList applications</h1>
+                        <h1>Welcome to my ToDoList applications</h1>
                         <AddNewItemForm
                             addItem={this.addTodoList}/>
                     </div>
