@@ -12,11 +12,9 @@ export const api={
             {title: newTaskTitle}
         )
     },
-    deleteTask(taskId){
-        return instance.delete(`/tasks/${taskId}`
-        ).then((response)=> {
-
-        }).catch()
+    deleteTask(todolistId,id){
+        return instance.delete(`/tasks/${id}`
+        )
     },
     deleteToDoList (todoListId){
         return instance.delete(`/${todoListId}`)
@@ -34,7 +32,7 @@ export const api={
         return instance.get(`/${id}/tasks/`)
     },
     updateTask(task){
-        return instance.put(`/tasks/`, task,)
+        return instance.put(`/tasks/`, task)
     },
 
     updateTitleTodoList(newTodoListTitle, id) {

@@ -75,13 +75,15 @@ class TodoList extends React.Component {
         return (
 
             <div className={s.todoList}>
-
-                <TodoListTitle updateTodoTitle = {this.updateTodoTitle}
-                               title={this.props.title}
-                               id={this.props.id}/>
+                <div className={s.todoTitle}>
+                    <TodoListTitle updateTodoTitle={this.updateTodoTitle}
+                                   title={this.props.title}
+                                   id={this.props.id}/></div>
                 <button className={s.deleteTodoList} onClick={this.deleteToDoList}>X</button>
-                <AddNewItemForm
-                    addItem={this.addTask}/>
+                <div className={s.addForm}>
+                    <AddNewItemForm addItem={this.addTask}/>
+                </div>
+
 
 
                 <TodoListTasks

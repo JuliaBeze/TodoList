@@ -2,40 +2,31 @@
 .todoListFooter {
 
     height: 50px;
-    font-size: 20px;
+    font-size: 17px;
     justify-content:center;
     align-items: center;
     text-align: center;
     text-decoration: none;
-    color: white;
     position: relative;
     z-index: 1;
+    padding-top: 15px;
+
 
 }
 
 .todoListFooter:after {
-    content: "";
-    display: flex;
-    flex-direction: row-reverse;
-    position:absolute;
-    width: 100%;
-    height: 5px;
-    background-color: #0066cc;
-    bottom: 0;
-    z-index: -1;
-    transition:0.3s ;
-}
-
-.todoListFooter:hover {
-    text-decoration:none;
-    color: white;
-}
-
-.todoListFooter:hover::after {
-    width: 100%;
-    height: 25px;
-}
-.todoListFooter button{
+     content: "";
+     display: flex;
+     flex-direction: row-reverse;
+     position:absolute;
+     width: 100%;
+     height: 5px;
+     background-color: #0066cc;
+     bottom: 0;
+     z-index: -1;
+     transition:0.3s ;
+ }
 
 
-}
+
+
