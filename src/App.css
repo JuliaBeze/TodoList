@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  height: 50vh;
+
 }
 
 .todoList-task.done {
@@ -33,5 +33,18 @@
 }
 .page{
   background: linear-gradient(to right, #fefcaa,royalblue);
+  padding: 10px;
+}
+
+
+.todoList-task {
+
+}
+
+.todoList-task.done {
+  opacity: 0.5;
+}
+
+.todoList > div {
   padding: 10px;
 }
