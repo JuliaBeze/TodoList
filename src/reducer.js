@@ -157,11 +157,18 @@ export const addTaskTC = (newText, todoListId)=> {
 
 export const deleteTaskTC = (toDoListId, taskId)=> {
     return(dispatch)=> {
-        api.deleteTask(toDoListId, taskId)
+        api.deleteTask(taskId)
             .then(dispatch(DeleteTaskAC(toDoListId, taskId))
             );
     }
 };
+
+
+
+
+
+
+
 export const deleteToDoListTC =(todoListId)=>{
     return(dispatch)=> {
         api.deleteToDoList(todoListId)

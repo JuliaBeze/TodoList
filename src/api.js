@@ -6,16 +6,20 @@ const instance = axios.create({
     headers: {"API-KEY": "33b08604-f7c7-406c-9da3-f5d36527b14f"}
 });
 
+
+
+
 export const api={
     createTask (newTaskTitle,todolistId){
         return instance.post(`/${todolistId}/tasks/`,
             {title: newTaskTitle}
         )
     },
-    deleteTask(todolistId,id){
+    deleteTask(id){
         return instance.delete(`/tasks/${id}`
         )
     },
+
     deleteToDoList (todoListId){
         return instance.delete(`/${todoListId}`)
     },
@@ -25,20 +29,25 @@ export const api={
         )
     },
     getTodoLists(){
-        return instance.get("/")
+        return instance.get("")
 
     },
     getTasks(id) {
         return instance.get(`/${id}/tasks/`)
     },
     updateTask(task){
-        return instance.put(`/tasks/`, task)
+        return instance.put(`/tasks`, task)
     },
-
     updateTitleTodoList(newTodoListTitle, id) {
-
         return instance.put(
             `/${id}`,
             {title: newTodoListTitle})
     }
 };
+
+
+
+
+
+
+
