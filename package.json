@@ -2,6 +2,7 @@
   "name": "01-todolist",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://juliabeze.github.io/TodoList/",
   "dependencies": {
     "axios": "^0.19.0",
     "react": "^16.8.6",
@@ -33,6 +34,7 @@
     ]
   },
   "devDependencies": {
-    "csscomb": "^4.3.0"
+    "csscomb": "^4.3.0",
+    "gh-pages": "^2.2.0"
   }
 }
