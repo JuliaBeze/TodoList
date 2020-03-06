@@ -88,8 +88,6 @@ class TodoList extends React.Component {
                     <AddNewItemForm addItem={this.addTask}/>
                 </div>
 
-
-
                 <TodoListTasks
                     deleteTask={this.deleteTask}
                     toDoListId={this.props.toDoListId}
