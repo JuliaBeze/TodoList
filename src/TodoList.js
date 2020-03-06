@@ -27,7 +27,7 @@ class TodoList extends React.Component {
 
 
     restoreState = () => {
-        this.props.setTasks(this.props.id)
+        this.props.setTasksTC(this.props.id)
     };
 
     state = {
@@ -36,7 +36,7 @@ class TodoList extends React.Component {
     };
 
     addTask = (newText) => {
-        this.props.addTask(newText,this.props.id)
+        this.props.addTaskTC(newText,this.props.id)
     };
 
     deleteTask = (taskId) => {
@@ -45,7 +45,7 @@ class TodoList extends React.Component {
 
 
     deleteToDoList = () => {
-        this.props.deleteToDoList(this.props.id)
+        this.props.deleteToDoListTC(this.props.id)
     };
 
     changeFilter = (newFilterValue) => {
@@ -54,11 +54,15 @@ class TodoList extends React.Component {
         )};
 
     updateTodoTitle = (newTodoListTitle) => {
-        this.props.updateTodoTitle(newTodoListTitle, this.props.id)
+        this.props.updateTitleTodoListTC(newTodoListTitle, this.props.id)
     };
 
-    changeTask = (taskId,obj) => {
-        this.props.changeTask(taskId,obj,this.props.id)
+    changeTask = (taskId, obj) => {
+        let changedTask = this.props.tasks.find(task => {
+            return task.id === taskId
+        });
+        let task = {...changedTask, ...obj};
+        this.props.changeTaskTC(taskId,  obj, task, this.props.id);
     };
 
     changeStatus = (taskId, isDone) => {
@@ -114,31 +118,8 @@ class TodoList extends React.Component {
     }
 }
 
-const mapDispatchToProps = (dispatch)=> {
-    return {
-        addTask(newText, todoListId) {
-            dispatch(addTaskTC(newText, todoListId));
 
-        },
-        changeTask(taskId,obj,todoListId) {
-            dispatch(changeTaskTC(taskId,obj,todoListId))
-        },
-        deleteTask(toDoListId, taskId) {
-            dispatch(deleteTaskTC(toDoListId, taskId))
-        },
-        deleteToDoList (id){
-            dispatch(deleteToDoListTC(id))
-        },
-        setTasks(todoListId){
-            let thunk = setTasksTC(todoListId);
-            dispatch(thunk);
-        },
-        updateTodoTitle(newTodoListTitle, todolistId) {
-            dispatch(updateTitleTodoListTC(newTodoListTitle, todolistId));
-        }
-    }
-}
 
-const ConnectedTodoList = connect(null,mapDispatchToProps)(TodoList)
+const ConnectedTodoList = connect(null,{setTasksTC,changeTaskTC,updateTitleTodoListTC,deleteToDoListTC,deleteTaskTC,addTaskTC})(TodoList);
 export default ConnectedTodoList;
 
